@@ -1,7 +1,7 @@
 {
   "name": "y",
   "version": "1.0.0",
-  "description": "",
+  "description": "ChatWeb Demo",
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/nodemon server/server.js",
