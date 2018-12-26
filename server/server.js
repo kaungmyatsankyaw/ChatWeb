@@ -4,7 +4,10 @@ const http = require('http');
 const socketIO = require('socket.io');
 
 const publicPath = path.join(__dirname, '../public');
-let {generatemessage} = require('./utilits/generatemessage');
+let {
+    generatemessage,
+    generateLocationMessage
+} = require('./utilits/generatemessage');
 let app = express();
 let server = http.createServer(app);
 let port = 4800;
@@ -19,10 +22,14 @@ io.on('connection', (socket) => {
 
     socket.broadcast.emit('newMail', generatemessage('Admin', 'New User Joined'));
 
-    socket.on('createMail', (mail,callback) => {
+    socket.on('createMail', (mail, callback) => {
         console.log(mail);
         io.emit('newMail', generatemessage(mail.from, mail.text));
         callback('This is from server');
+    });
+
+    socket.on('sendLocation', (coords) => {
+        io.emit('newLocation', generateLocationMessage('Admin', coords.lat, coords.lang));
     });
 
     socket.on('disconnect', () => {
