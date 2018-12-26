@@ -6,18 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/libs/jquery.js"></script>
+    <script src="/js/libs/vue.js"></script>
 </head>
 
 <body>
 
+    <div id="app">
 
-    <form action="" id="message_form">
-        <input type="text" id="message">
-        <button type="submit">Send</button>
-    </form>
+       <ol id="messagelist"></ol>
 
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/libs/jquery.js"></script>
+        <form action="" id="message_form">
+            <input type="text" id="message">
+            <button type="submit">Send</button>
+        </form>
+
+        <button id="sendLocation">Send Location</button>
+
+    </div>
+
+   
     <script src="/js/index.js"></script>
 </body>
 
