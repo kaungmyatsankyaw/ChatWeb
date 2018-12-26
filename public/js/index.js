@@ -1,8 +1,5 @@
 var socket = io();
 
-
-
-
 socket.on('connect', () => {
     console.log('Connect to Server');
 });
@@ -29,8 +26,6 @@ $('#message_form').on('submit', (e) => {
     });
 
 });
-
-
 
 jQuery('#sendLocation').on('click',(e)=>{
     e.preventDefault;
