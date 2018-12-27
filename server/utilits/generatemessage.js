@@ -10,6 +10,8 @@ let generateLocationMessage = (from, latitude, longitude) => {
     return {
         from,
         url: 'https://www.google.com/maps?q=' + latitude + ',' + longitude,
+        lat:latitude,
+        long:longitude,
         created_at: new Date().getTime
     }
 }
